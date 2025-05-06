@@ -19,7 +19,7 @@ echo site_url() . '/wp-content/themes/squarebook-main/assets/img/footer-logo.svg
             <nav>
                 <ul class=" footer-menu">
                     <li class="footer-menu__item"><a href="<?php echo get_permalink(get_page_by_path('about')); ?>"
-                            class=" footer-menu__item-link" data-scroll>About </a></li>
+                            class=" footer-menu__item-link" data-scroll>About 1</a></li>
                     <li class="footer-menu__item"><a href="<?php echo get_permalink(get_page_by_path('contact-us')); ?>"
                             class=" footer-menu__item-link" data-scroll>Contact</a>
                     </li>
@@ -39,10 +39,10 @@ echo site_url() . '/wp-content/themes/squarebook-main/assets/img/linkdfooter.svg
         <div class="exclaimer-text">
             SquareBook is authorised and regulated by the Financial Conduct Authority (FRN 812594) in relation to
             its
-            arranging activities. 
+            arranging activities.
             SquareBook Financial Ltd, 71-75 Shelton Street, Covent Garden, London WC2H 9JQ
-            
-            
+
+
         </div>
         <div class="copyright-text">Copyright 2024 - All Rights Reserved</div>
     </div>
