@@ -1,10 +1,8 @@
-name: Deploy to StackCP
+name: Deploy WordPress Theme to StackCP
 
 on:
   push:
-    branches: [ main ]  # You can change this to match your branch name (e.g., master)
-  
-  # Optional: Allow manual triggering via the Actions tab
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -14,26 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'  # Change this to match your PHP version
-          extensions: mbstring, intl, pdo_mysql, zip, exif, pcntl, bcmath, gd
-          
-      - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader --no-interaction
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # Change this to match your Node.js version
-          
-      - name: Install NPM dependencies
-        run: npm ci
-        
-      - name: Build assets
-        run: npm run build  # Change this to match your build command (e.g., npm run prod)
         
       - name: Setup SSH key
         uses: webfactory/ssh-agent@v0.7.0
@@ -45,28 +23,13 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ssh.gb.stackcp.com >> ~/.ssh/known_hosts
           
-      - name: Deploy to StackCP
+      - name: Deploy theme to WordPress
         run: |
+          # Replace "squarebook-main" with your actual theme directory name
           rsync -avz --exclude='.git' \
                      --exclude='.github' \
                      --exclude='node_modules' \
-                     --exclude='.env.example' \
                      --exclude='.gitignore' \
                      --exclude='README.md' \
-                     --exclude='tests' \
-                     --exclude='storage/framework/testing' \
-                     . squarebook.com@ssh.gb.stackcp.com:~/public_html
-      
-      - name: Run deployment commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: ssh.gb.stackcp.com
-          username: squarebook.com
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ~/public_html
-            php artisan optimize:clear
-            php artisan migrate --force
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
+                     --exclude='.DS_Store' \
+                     . squarebook.com@ssh.gb.stackcp.com:~/public_html/wp-content/themes/your-theme-name
