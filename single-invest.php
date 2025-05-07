@@ -297,11 +297,13 @@ echo $item_slug;
             </div>
             <div class="cta-form">
                 <?php
-                 $item_slug = 'item ' . get_post_field('post_name', get_the_ID());
-
-                echo '<input type="hidden" name="debug-item-label" value="' . esc_attr($item_slug) . '" />';
-                echo do_shortcode('[contact-form-7 id="0adea42" title="Invest page" item-label="' . esc_attr($item_slug) . '"]');
+                 $item_slug = 'item-' . get_post_field('post_name', get_the_ID());
+                 ?>
+                <?php
+                echo do_shortcode('[contact-form-7 id="0adea42" title="Invest page"]');
+                
                 ?>
+
                 <div class="form-submitted" id="form-submitted">
                     <img src="<?php
                     echo site_url() . '/wp-content/themes/squarebook-main/assets/img/check-circle.svg'?>" alt="">

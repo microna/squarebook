@@ -109,29 +109,82 @@ add_action('wp_head', 'replace_cf7_spinner_with_css');
 function replace_cf7_spinner_with_css() {
     if (function_exists('wpcf7_enqueue_scripts')) {
         ?>
-        <style type="text/css">
-        .wpcf7 .ajax-loader {
-            background-image: none !important;
-            width: 20px !important;
-            height: 20px !important;
-            margin: 0 0 0 4px !important;
-            vertical-align: middle !important;
-            
-            /* CSS Spinner */
-            border: 2px solid rgba(0, 0, 0, 0.1) !important;
-            border-left: 2px solid #333 !important;
-            border-radius: 50% !important;
-            animation: cf7_spin 1s infinite linear !important;
-        }
-        
-        @keyframes cf7_spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        </style>
-        <?php
+<style type="text/css">
+.wpcf7 .ajax-loader {
+    background-image: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 0 0 4px !important;
+    vertical-align: middle !important;
+
+    /* CSS Spinner */
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    border-left: 2px solid #333 !important;
+    border-radius: 50% !important;
+    animation: cf7_spin 1s infinite linear !important;
+}
+
+@keyframes cf7_spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
+</style>
+<?php
+    }
+}
+
+// /**
+//  * Replace empty hidden field with value in Contact Form 7
+//  */
+// add_filter('wpcf7_form_elements', function($content) {
+//     if (is_singular('invest')) {
+//         $item_slug = 'item-' . get_post_field('post_name', get_the_ID());
+//         // Replace the empty hidden field with one containing the value
+//         $content = str_replace(
+//             '[hidden item-label]',
+//             '<input type="hidden" name="item-label" value="' . esc_attr($item_slug) . '" />',
+//             $content
+//         );
+//     }
+//     return $content;
+// });
+
+// /**
+//  * Set default value for item-label field
+//  */
+// add_filter('wpcf7_form_tag_data', function($data, $tag) {
+//     if ($tag->name === 'item-label' && is_singular('invest')) {
+//         $item_slug = 'item-' . get_post_field('post_name', get_the_ID());
+//         error_log('CF7 Form Tag Data - Item Slug: ' . $item_slug);
+//         return $item_slug;
+//     }
+//     return $data;
+// }, 10, 2);
+
+
+function add_page_slug_to_form() {
+    global $post;
+    if (isset($post)) {
+        $slug = $post->post_name;
+        ?>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    // Target all hidden fields with the name item-label
+    var hiddenFields = document.querySelectorAll('input[name="item-label"]');
+    hiddenFields.forEach(function(field) {
+        field.value = '<?php echo esc_js($slug); ?>';
+    });
+});
+</script>
+<?php
+    }
+}
+add_action('wp_footer', 'add_page_slug_to_form');
 
 
 
