@@ -174,7 +174,6 @@ function add_page_slug_to_form() {
         ?>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-    // Target all hidden fields with the name item-label
     var hiddenFields = document.querySelectorAll('input[name="item-label"]');
     hiddenFields.forEach(function(field) {
         field.value = '<?php echo esc_js($slug); ?>';
@@ -185,6 +184,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 add_action('wp_footer', 'add_page_slug_to_form');
+
+
+function add_form_submission_spinner() {
+    ?>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('.wpcf7-form');
+
+    forms.forEach(form => {
+        const submitButton = form.querySelector('.wpcf7-submit');
+        if (submitButton) {
+            // Create spinner element
+            const spinner = document.createElement('span');
+            spinner.className = 'form-submission-spinner';
+            submitButton.parentNode.insertBefore(spinner, submitButton.nextSibling);
+
+            // Handle form submission
+            form.addEventListener('submit', function() {
+                form.classList.add('form-submitting');
+            });
+
+            // Handle form response
+            document.addEventListener('wpcf7submit', function(event) {
+                if (event.detail.contactFormId === form.querySelector('input[name="_wpcf7"]')
+                    .value) {
+                    form.classList.remove('form-submitting');
+                }
+            }, false);
+        }
+    });
+});
+</script>
+<?php
+}
+add_action('wp_footer', 'add_form_submission_spinner');
 
 
 

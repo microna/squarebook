@@ -193,6 +193,7 @@ body.dark {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -202,6 +203,7 @@ body.dark {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -867,14 +869,14 @@ body.dark {
     padding-bottom: 16px;
 }
 
-.text-content__header-bold{
-	font-size: 3rem; 
-	font-weight: 700; 
-	line-height: 62px; 
-	font-family: "DM Sans", sans-serif;
-	color: #8A6B24;
+.text-content__header-bold {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 62px;
+    font-family: "DM Sans", sans-serif;
+    color: #8A6B24;
     padding-bottom: 16px;
-	font-weight: 500;
+    font-weight: 500;
 }
 
 .text-content__text {
@@ -1188,9 +1190,11 @@ footer {
     .primary-button {
         width: 100%;
     }
+
     .mobile-show {
         display: block;
     }
+
     .menu {
         position: fixed;
         background: white;
@@ -1200,6 +1204,7 @@ footer {
         width: 100vw;
         display: none;
     }
+
     .menu.active {
         display: block;
         marging-top: 16px;
@@ -1224,9 +1229,11 @@ footer {
         -webkit-animation: fade 0.1s linear;
         animation: fade 0.1s linear;
     }
+
     .menu .login::before {
         display: none;
     }
+
     .burger {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1235,6 +1242,7 @@ footer {
         height: 20px;
         width: 30px;
     }
+
     .burger.active:before {
         background: #9FA6B2;
         -webkit-transform: rotate(45deg);
@@ -1245,6 +1253,7 @@ footer {
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
         top: 8px;
     }
+
     .burger.active:after {
         background: #9FA6B2;
         -webkit-transform: rotate(-45deg);
@@ -1255,11 +1264,13 @@ footer {
         -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
     }
+
     .burger.active span {
         -webkit-transform: scale(0);
         -ms-transform: scale(0);
         transform: scale(0);
     }
+
     .burger:before,
     .burger:after {
         content: "";
@@ -1271,12 +1282,15 @@ footer {
         -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
     }
+
     .burger:before {
         top: 0;
     }
+
     .burger::after {
         bottom: 0;
     }
+
     .burger span {
         position: absolute;
         top: 9px;
@@ -1291,16 +1305,20 @@ footer {
         -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
     }
+
     .main-image {
         min-width: 100%;
         border-radius: 8px;
     }
+
     .advantages {
         display: block;
     }
+
     .advantages-box {
         padding-bottom: 64px;
     }
+
     .text-image-section {
         display: block;
         -webkit-box-align: center;
@@ -1308,9 +1326,11 @@ footer {
         align-items: center;
         padding-top: 64px;
     }
+
     .text-content {
         padding-bottom: 64px;
     }
+
     .image-content {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1322,73 +1342,94 @@ footer {
         -ms-flex-pack: center;
         justify-content: center;
     }
+
     .features {
         display: block;
     }
+
     .features-box {
         margin-bottom: 8px;
         min-width: 100%;
     }
+
     .text-image-section-reverse {
         display: block;
     }
+
     .cta {
         display: block;
     }
+
     .cta-info {
         padding-bottom: 64px;
     }
+
     .cta-form {
         min-width: 100%;
     }
+
     .mobile-no-show {
         display: none !important;
     }
+
     #about-us-section {
         background: none;
     }
+
     .about-us {
         display: block;
     }
+
     .about-us-content {
         padding-bottom: 64px;
     }
+
     .about-us-bg {
         min-width: 100%;
         width: 100%;
         height: 100%;
     }
+
     .about-us-bg {
         width: 100%;
         height: 588px;
         background-image: url("../img/about-us-bg.jpg");
     }
+
     .about-us-bg img {
         min-width: 100%;
     }
+
     .value {
         display: block;
     }
+
     .value-content {
         padding-bottom: 64px;
     }
+
     .why-squarebook-wrapper {
         display: block;
     }
+
     .why-squarebook-box {
         min-width: 100%;
         margin-bottom: 24px;
     }
+
     .certification {
         padding-top: 64px;
         display: block;
     }
+
     .certification-content {
         padding-bottom: 48px;
     }
+
     .team-wrapper {
         display: block;
     }
+
     .team-box {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1397,23 +1438,28 @@ footer {
         -ms-flex-align: center;
         align-items: center;
     }
+
     .team-box__content {
         min-width: 300px;
         text-align: left;
         padding-left: 16px;
     }
+
     .contact-wrapper {
         display: block;
     }
+
     .contact-info {
         padding-bottom: 64px;
     }
+
     .contact-form {
         min-width: 100%;
         border: 1px solid #d1d1d1;
         padding: 32px 16px;
         border-radius: 8px;
     }
+
     .sponsorship {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1423,61 +1469,78 @@ footer {
         -ms-flex-pack: distribute;
         justify-content: space-around;
     }
+
     .sponsorship img {
         min-width: 166px;
     }
+
     .advantages {
         display: block;
     }
+
     .text-image-section {
         padding-top: 64px;
         padding-bottom: 64px;
         display: block;
     }
+
     .aside-content {
         margin-top: 64px;
         width: 100%;
     }
+
     .blog {
         display: block;
     }
+
     .blog-box {
         width: 100%;
         margin-bottom: 32px;
     }
+
     .advantages-list {
         max-width: 100%;
     }
+
     .image-box {
         display: block;
     }
+
     .image-box img {
         width: 100%;
         padding-bottom: 40px;
     }
+
     .cta {
         display: block;
     }
+
     .cta-info {
         padding-bottom: 64px;
     }
+
     .cta-form {
         min-width: 100%;
     }
+
     .footer-logo {
         padding-bottom: 16px;
     }
+
     .footer-menu {
         padding-bottom: 16px;
     }
+
     .footer {
         display: block;
     }
+
     .socials {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
     }
+
     .socials a {
         padding-left: 0;
         padding-right: 16px;
@@ -1512,21 +1575,27 @@ footer {
         font-size: 3rem;
         line-height: 62px;
     }
+
     .advantages-box {
         width: 100%;
     }
+
     .mobile-show {
         display: block !important;
     }
+
     .mobile-no-show {
         display: none !important;
     }
+
     .hero-video {
         height: 40vh;
     }
+
     #play-button {
         display: none !important;
     }
+
     .section-image {
         padding-top: 0px;
     }
@@ -1678,20 +1747,24 @@ footer {
 }
 
 @media screen and (max-width: 991px) {
-	
-	.full-width-image{
-    width: 100% !important;
-}
+
+    .full-width-image {
+        width: 100% !important;
+    }
+
     .graph-image {
         width: 100%;
     }
+
     .swiper-slide {
         height: 411px !important;
         justify-content: flex-start;
     }
+
     .boxes-wrapper {
         flex-wrap: wrap;
     }
+
     .boxes:nth-child(1) {
         border-right: none;
     }
@@ -1708,4 +1781,35 @@ footer {
 
 .text-content__text ul {
     padding-bottom: 20px
+}
+
+.form-submission-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-left: 2px solid #333;
+    border-radius: 50%;
+    animation: form-spin 1s infinite linear;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.form-submitting .form-submission-spinner {
+    display: inline-block;
+}
+
+.form-submitting .wpcf7-submit {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+@keyframes form-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
